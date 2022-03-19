@@ -1,7 +1,7 @@
 
 import style from "./styles.module.scss";
 import human from "../../../assets/images/human.png"
-function Card() {
+const Card = () => {
   return (
     <div className={style.card}>
       <div className={style.content}>
