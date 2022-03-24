@@ -3,10 +3,13 @@
   font-family: "Roboto";
 	max-width: 23.75rem;
 	background-color: $white;
-	border-radius: 0.5rem;
+	border-radius: 0.25rem;
+	margin: 0 3rem 1.5rem 0;
   .content {
-    display: flex;
+		display: grid;
+		grid-template-columns: 0.5fr 2fr;
 		.image {
+			border-radius: 0.25rem 0 0 0.25rem;
 			width: 7.75rem;
 			height: 7.75rem;
 			margin: 0 1.6rem 0 0;
