@@ -4,10 +4,8 @@
 	max-width: 23.75rem;
 	background-color: $white;
 	border-radius: 0.25rem;
-	margin: 0 3rem 1.5rem 0;
   .content {
-		display: grid;
-		grid-template-columns: 0.5fr 2fr;
+		display: flex;
 		.image {
 			border-radius: 0.25rem 0 0 0.25rem;
 			width: 7.75rem;
