@@ -1,7 +1,5 @@
 @import "../../../assets/styles/main.scss";
 .card {
-  font-family: "Roboto";
-	max-width: 23.75rem;
 	background-color: $white;
 	border-radius: 0.25rem;
   .content {
@@ -11,6 +9,9 @@
 			width: 7.75rem;
 			height: 7.75rem;
 			margin: 0 1.6rem 0 0;
+			@media (max-width:660px) {
+				margin: 0 1rem 0 0;
+			}
 		}
     .info {
 			padding: 1rem 0;
