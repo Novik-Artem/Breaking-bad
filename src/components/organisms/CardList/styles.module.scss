@@ -6,11 +6,9 @@
 	padding: 0 1rem;
 	margin: 0 auto;
 	@media (max-width:1001px) {
-		max-width: 55rem;
 		grid-template-columns: 1fr 1fr;
 	}
 	@media (max-width:660px) {
-		max-width: 30rem;
 		grid-template-columns: 1fr;
 		gap: 1rem;
 	}

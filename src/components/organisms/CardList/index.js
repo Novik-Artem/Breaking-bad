@@ -38,7 +38,7 @@ const CardList = () => {
       birthday: "23.11.2001",
       img: human,
       status: "живой",
-    },
+		},
   ];
   return (
     <div className={style.cardList}>
