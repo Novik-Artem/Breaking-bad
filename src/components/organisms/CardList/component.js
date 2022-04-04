@@ -4,7 +4,13 @@ const CardList = ({ cards }) => {
   return (
     <div className={style.cardList}>
       {cards.map((card) => (
-        <Card card={card} key={card.id} />
+        <Card
+          img={card.img}
+          birthday={card.birthday}
+          status={card.status}
+          name={card.name}
+          key={card.id}
+        />
       ))}
     </div>
   );
