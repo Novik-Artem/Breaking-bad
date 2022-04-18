@@ -1,20 +1,32 @@
-import { v4 as uuidv4 } from "uuid";
-import human from "../../assets/images/human.png";
 import {
-  //CHANGE_NUMBER_LOADER,
-  ERROR_GETTING_NUMBER,
-  NUMBER_SUCCESS,
+  LOADING_GETTING_CARDS,
+  ERROR_GETTING_CARDS,
+  SUCCESS_GETTING_CARDS,
 } from "../actionsType";
+
 const initialState = {
-  cards: [
-  ],
+  cards: [],
+  isError: false,
+  isLoader: null,
 };
+
 const card = (state = initialState, action) => {
-	switch (action.type) {
-		case NUMBER_SUCCESS:
-			return {
-				...state, cards: action.value
-			}
+  switch (action.type) {
+    case SUCCESS_GETTING_CARDS:
+      return {
+        ...state,
+        cards: action.value,
+      };
+    case ERROR_GETTING_CARDS:
+      return {
+        ...state,
+        isError: action.value,
+      };
+    case LOADING_GETTING_CARDS:
+      return {
+        ...state,
+        isLoader: action.value,
+      };
     default:
       return state;
   }

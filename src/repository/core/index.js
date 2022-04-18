@@ -16,7 +16,7 @@ class Core {
       );
       result.value = response.data;
     } catch (e) {
-      result.error = e.response.data;
+			result.error = e.message
     }
     return result;
   };

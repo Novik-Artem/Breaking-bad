@@ -1,28 +1,30 @@
 import {
-  //CHANGE_NUMBER_LOADER,
-  ERROR_GETTING_NUMBER,
-  NUMBER_SUCCESS,
+  LOADING_GETTING_CARDS,
+  ERROR_GETTING_CARDS,
+  SUCCESS_GETTING_CARDS,
 } from "../actionsType";
 
-//export function numberLoader(value) {
-//  return { type: CHANGE_NUMBER_LOADER, value };
-//}
-import Repository from "../../repository"
-export function numberError(value) {
-	return { type: ERROR_GETTING_NUMBER, value };
+import Repository from "../../repository";
+
+export function cardsSuccess(value) {
+  return { type: SUCCESS_GETTING_CARDS, value };
 }
-export function numberSuccess(value) {
-  return { type: NUMBER_SUCCESS, value };
+
+export function cardsLoader(value) {
+  return { type: LOADING_GETTING_CARDS, value };
 }
-export const getNumberFromAPI = () => async (dispatch) => {
-  //dispatch(numberLoader(true));
+
+export function cardsError(value) {
+  return { type: ERROR_GETTING_CARDS, value };
+}
+
+export const getCardsFromAPI = () => async (dispatch) => {
+  dispatch(cardsLoader(true));
 
   const { value, error } = await Repository.APICore.getPersons();
   if (error || !value) {
-    dispatch(numberError(true));
-	} else 
-	dispatch(numberSuccess(value));
+    dispatch(cardsError(error));
+  } else dispatch(cardsSuccess(value));
 
-  //dispatch(numberLoader(false));
+  dispatch(cardsLoader(false));
 };
-

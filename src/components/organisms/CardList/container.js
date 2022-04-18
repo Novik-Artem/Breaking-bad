@@ -1,13 +1,24 @@
 import CardList from "./component";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { getNumberFromAPI } from "../../../store/actions";
+import { getCardsFromAPI } from "../../../store/actions";
+import Loader from "../../atoms/Loader";
 const CardListContainer = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getNumberFromAPI());
-  });
+    dispatch(getCardsFromAPI());
+  }, []);
   const cards = useSelector((state) => state.cards.cards);
-  return <CardList cards={cards} />;
+  const isError = useSelector((state) => state.cards.isError);
+  const isLoader = useSelector((state) => state.cards.isLoader);
+  return isError ? (
+    <div style={{ color: "green", textAlign: "center", fontSize: "50px" }}>
+      {isError}
+    </div>
+  ) : isLoader ? (
+    <Loader />
+  ) : (
+    <CardList cards={cards} />
+  );
 };
 export const container = CardListContainer;
