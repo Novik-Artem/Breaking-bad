@@ -1,46 +1,32 @@
-import { v4 as uuidv4 } from "uuid";
-import human from "../../assets/images/human.png";
+import {
+  LOADING_GETTING_CARDS,
+  ERROR_GETTING_CARDS,
+  SUCCESS_GETTING_CARDS,
+} from "../actionsType";
+
 const initialState = {
-  cards: [
-    {
-      id: uuidv4(),
-      name: "Андрей Панасюк",
-      birthday: "23.11.2001",
-      img: human,
-      status: "живой",
-    },
-    {
-      id: uuidv4(),
-      name: "Андрей Панасюк",
-      birthday: "23.11.2001",
-      img: human,
-      status: "живой",
-    },
-    {
-      id: uuidv4(),
-      name: "Андрей Панасюк",
-      birthday: "23.11.2001",
-      img: human,
-      status: "живой",
-    },
-    {
-      id: uuidv4(),
-      name: "Андрей Панасюк",
-      birthday: "23.11.2001",
-      img: human,
-      status: "живой",
-    },
-    {
-      id: uuidv4(),
-      name: "Андрей Панасюк",
-      birthday: "23.11.2001",
-      img: human,
-      status: "живой",
-    },
-  ],
+  cards: [],
+  isError: false,
+  isLoader: null,
 };
+
 const card = (state = initialState, action) => {
   switch (action.type) {
+    case SUCCESS_GETTING_CARDS:
+      return {
+        ...state,
+        cards: action.value,
+      };
+    case ERROR_GETTING_CARDS:
+      return {
+        ...state,
+        isError: action.value,
+      };
+    case LOADING_GETTING_CARDS:
+      return {
+        ...state,
+        isLoader: action.value,
+      };
     default:
       return state;
   }
