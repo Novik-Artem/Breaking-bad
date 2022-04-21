@@ -7,6 +7,7 @@
   height: 6rem;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
+	margin: 0 auto;
   @keyframes spin {
     0% {
       transform: rotate(0deg);
