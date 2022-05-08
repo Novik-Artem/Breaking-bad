@@ -10,7 +10,7 @@ const CardPageContainer = () => {
 	const chosenCard = useSelector((state) => state.cards.chosenCard);
   useEffect(() => {
     dispatch(getCardByIdFromAPI(id));
-  },[id]);
+  },[]);
 	return (
 		<CardPage card={chosenCard} />
 	);
