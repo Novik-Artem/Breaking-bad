@@ -9,7 +9,8 @@ const CardList = ({ cards }) => {
           birthday={card.birthday}
           status={card.status}
           name={card.name}
-          key={card.id}
+					key={card.char_id}
+					id={card.char_id}
         />
       ))}
     </div>
