@@ -1,14 +1,12 @@
 import style from "./styles.module.scss";
-import CardList from "../../organisms/CardList"
-import Header from "../../molecules/Header"
+import CardList from "../../organisms/CardList";
 
 const CardListPage = () => {
   return (
-		<div className={style.content}>
-			<Header />
-			<CardList />
+    <div className={style.content}>
+      <CardList />
     </div>
   );
 };
-	
+
 export default CardListPage;

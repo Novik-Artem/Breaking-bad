@@ -1,21 +1,21 @@
 @import "../../../assets/styles/main.scss";
 .card {
-	background-color: $white;
-	border-radius: 0.25rem;
-	box-shadow: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  background-color: $white;
+  border-radius: 0.25rem;
+  box-shadow: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
   .content {
-		display: flex;
-		.image {
-			border-radius: 0.25rem 0 0 0.25rem;
-			width: 7.75rem;
-			height: 7.75rem;
-			margin: 0 1.6rem 0 0;
-			@media (max-width:660px) {
-				margin: 0 1rem 0 0;
-			}
-		}
+    display: flex;
+    .image {
+      border-radius: 0.25rem 0 0 0.25rem;
+      width: 7.75rem;
+      height: 7.75rem;
+      margin: 0 1.6rem 0 0;
+      @include custom(660) {
+        margin: 0 1rem 0 0;
+      }
+    }
     .info {
-			padding: 1rem 0;
+      padding: 1rem 0;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -28,7 +28,7 @@
         color: $green;
         padding: 0.5rem 0.75rem;
         background: $greenBg;
-				margin: 0 0 0.75rem 0;
+        margin: 0 0 0.75rem 0;
       }
       .name {
         line-height: 1.5rem;

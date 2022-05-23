@@ -1,0 +1,25 @@
+@mixin container {
+  max-width: 78rem;
+  margin: 0 auto;
+}
+
+@mixin laptop {
+  @media (max-width: 1440px) {
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 768px) {
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 482px) {
+  }
+}
+
+@mixin custom($screen) {
+  @media (max-width: $screen+"px") {
+    @content;
+  }
+}

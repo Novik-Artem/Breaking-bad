@@ -29,7 +29,6 @@ aside {
 }
 html,
 body {
-  height: 100%;
   width: 100%;
   font-size: 100%;
   line-height: 1;
@@ -76,4 +75,13 @@ h5,
 h6 {
   font-size: inherit;
   font-weight: 400;
+}
+/*for footer*/
+.App {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+.container {
+	flex: 1 1 auto;
 }

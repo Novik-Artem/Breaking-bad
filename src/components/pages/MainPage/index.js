@@ -1,12 +1,7 @@
 import style from "./styles.module.scss";
-import Header from "../../molecules/Header"
 
 const MainPage = () => {
-  return (
-		<div className={style.content}>
-			<Header />
-    </div>
-  );
+  return <main className={style.main}>I am main content</main>;
 };
 
 export default MainPage;

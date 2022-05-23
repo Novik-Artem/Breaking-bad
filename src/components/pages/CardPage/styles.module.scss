@@ -9,7 +9,7 @@
     display: flex;
     align-items: center;
     margin: 0 0 3rem 0;
-    @media (max-width: 630px) {
+    @include custom(630px) {
       margin: 0 0 1rem 0;
     }
     .icon {
@@ -18,17 +18,19 @@
   }
   .content {
     display: flex;
-    @media (max-width: 630px) {
+    @include custom(630) {
       display: block;
     }
     .image {
       max-width: 25rem;
       max-height: 25rem;
       margin: 0 6rem 0 0;
-      @media (max-width: 820px) {
+      @include custom(630) {
         margin: 0 2rem 0 0;
       }
-      @media (max-width: 630px) {
+      @include custom(630) {
+        max-width: 30rem;
+        height: 20rem;
         margin: 0 auto 1rem auto;
       }
       img {
@@ -40,7 +42,7 @@
       display: flex;
       flex-direction: column;
       align-items: start;
-      @media (max-width: 630px) {
+      @include custom(630) {
         align-items: center;
       }
       span {
@@ -66,13 +68,13 @@
       .nickname {
         color: $darkGrey;
         margin: 0 0 2rem 0;
-        @media (max-width: 630px) {
+        @include custom(630) {
           margin: 0 0 0.5rem 0;
         }
       }
       .quote {
         max-width: 26rem;
-        @media (max-width: 630px) {
+        @include custom(630) {
           margin: 0 auto;
           text-align: center;
           font-size: 0.9rem;
