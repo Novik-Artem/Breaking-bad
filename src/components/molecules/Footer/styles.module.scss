@@ -1,0 +1,12 @@
+@import "../../../assets/styles/main.scss";
+.footer {
+  background-color: $white;
+  .content {
+    padding: 1rem;
+    @include container;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
