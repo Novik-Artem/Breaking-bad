@@ -2,8 +2,8 @@ import "./assets/styles/main.scss";
 import MainPage from "./components/pages/MainPage";
 import CardListPage from "./components/pages/CardListPage";
 import CardPage from "./components/pages/CardPage";
-import Header from "./components/molecules/Header";
-import Footer from "./components/molecules/Footer";
+import Header from "./components/organisms/Header";
+import Footer from "./components/organisms/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {

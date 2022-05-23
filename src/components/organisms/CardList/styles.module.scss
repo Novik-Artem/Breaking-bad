@@ -1,3 +1,4 @@
+@import "../../../assets/styles/main.scss";
 .cardList {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -5,10 +6,10 @@
 	max-width: 77rem;
 	padding: 0 1rem;
 	margin: 0 auto;
-	@media (max-width:1001px) {
+	@include custom(1001px) {
 		grid-template-columns: 1fr 1fr;
 	}
-	@media (max-width:660px) {
+	@include custom(660px) {
 		grid-template-columns: 1fr;
 		gap: 1rem;
 	}
