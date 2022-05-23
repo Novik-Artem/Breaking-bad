@@ -6,10 +6,10 @@
 	max-width: 77rem;
 	padding: 0 1rem;
 	margin: 0 auto;
-	@include custom(1001px) {
+	@include custom(1001) {
 		grid-template-columns: 1fr 1fr;
 	}
-	@include custom(660px) {
+	@include custom(660) {
 		grid-template-columns: 1fr;
 		gap: 1rem;
 	}

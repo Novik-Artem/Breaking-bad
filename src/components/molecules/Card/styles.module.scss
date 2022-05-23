@@ -10,7 +10,7 @@
       width: 7.75rem;
       height: 7.75rem;
       margin: 0 1.6rem 0 0;
-      @include custom(660px) {
+      @include custom(660) {
         margin: 0 1rem 0 0;
       }
     }
