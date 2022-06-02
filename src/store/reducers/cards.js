@@ -3,7 +3,7 @@ import {
   ERROR_GETTING_CARDS,
 	SUCCESS_GETTING_CARDS,
 	SET_CHOSEN_CARD,
-} from "../actionsType";
+} from "../actionsType/cards";
 
 const initialState = {
   cards: [],

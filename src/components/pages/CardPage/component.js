@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import style from "./styles.module.scss";
 import icon from "../../../assets/icons/arrow.svg";
 
-const CardPage = ({ card }) => {
+const CardPage = ({ card, personQuote }) => {
   return (
     <div className={style.container}>
       <Link to="/cards" className={style.link}>
@@ -11,7 +11,7 @@ const CardPage = ({ card }) => {
       </Link>
       <div className={style.content}>
         <div className={style.image}>
-          <img src={card.img} alt="img_error" />
+          <img src={card.img} alt="" />
         </div>
         <div className={style.info}>
           <div className={style.status}>{card.status}</div>
@@ -25,9 +25,7 @@ const CardPage = ({ card }) => {
             {card.nickname}
           </div>
           <div className={style.quote}>
-            <span>Цитата:</span> Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Non, aliquam laoreet vivamus sed. Diam fames mi,
-            quam tellus cursus volutpat velit massa.
+            <span>Цитата: {personQuote}</span>
           </div>
         </div>
       </div>

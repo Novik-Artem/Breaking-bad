@@ -1,5 +1,5 @@
 import axios from "axios";
-class Core {
+class Cards {
   getPersons = async (limit = 10) => {
     const result = {
       value: null,
@@ -16,13 +16,13 @@ class Core {
       );
       result.value = response.data;
     } catch (e) {
-			result.error = e.message
+      result.error = e.message;
     }
     return result;
-	};
+  };
 
-	getPersonById = async (id) => {
-		const result = {
+  getPersonById = async (id) => {
+    const result = {
       value: null,
       error: null,
     };
@@ -32,10 +32,10 @@ class Core {
       );
       result.value = response.data;
     } catch (e) {
-			result.error = e.message
+      result.error = e.message;
     }
     return result;
-	}
+  };
 }
 
-export default new Core();
+export default new Cards();
