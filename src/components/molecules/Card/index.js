@@ -9,7 +9,7 @@ const Card = ({ img, birthday, status, name, id }) => {
           <div className={style.info}>
             <div className={style.text}>{status}</div>
             <div className={style.name}>{name}</div>
-						<div className={style.date}>{birthday}</div>
+            <div className={style.date}>{birthday}</div>
           </div>
         </div>
       </div>

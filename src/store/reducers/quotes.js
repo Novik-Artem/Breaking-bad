@@ -1,22 +1,28 @@
 import {
   LOADING_GETTING_QUOTE,
   ERROR_GETTING_QUOTE,
-	SET_QUOTE,
+  SET_QUOTE,
+  CLEAR_STORE,
 } from "../actionsType/quotes";
 
 const initialState = {
-  personQuote: '',
+  personQuote: "",
   isLoaderQuote: null,
   isErrorQuote: false,
 };
 
 const quote = (state = initialState, action) => {
-	switch (action.type) {
+  switch (action.type) {
     case SET_QUOTE:
       return {
         ...state,
-				personQuote: action.value,
-			};
+        personQuote: action.value,
+      };
+    case CLEAR_STORE:
+      return {
+        ...state,
+        personQuote: "",
+      };
     case ERROR_GETTING_QUOTE:
       return {
         ...state,
@@ -26,7 +32,7 @@ const quote = (state = initialState, action) => {
       return {
         ...state,
         isLoaderQuote: action.value,
-			};
+      };
     default:
       return state;
   }

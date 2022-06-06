@@ -1,7 +1,8 @@
 import {
   LOADING_GETTING_QUOTE,
   ERROR_GETTING_QUOTE,
-  SET_QUOTE,
+	SET_QUOTE,
+	CLEAR_STORE
 } from "../actionsType/quotes";
 import Repository from "../../repository";
 
@@ -23,6 +24,12 @@ export const isLoaderQuote = (value) => {
   return {
     type: LOADING_GETTING_QUOTE,
     value,
+  };
+};
+
+export const clearStore = () => {
+	return {
+    type: CLEAR_STORE,
   };
 };
 
