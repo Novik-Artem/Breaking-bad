@@ -1,7 +1,7 @@
 import CardList from "./component";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { getCardsFromAPI } from "../../../store/actions";
+import { getCardsFromAPI } from "../../../store/actions/cards";
 import Loader from "../../atoms/Loader";
 
 const CardListContainer = () => {

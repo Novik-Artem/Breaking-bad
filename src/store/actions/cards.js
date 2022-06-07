@@ -3,7 +3,7 @@ import {
   ERROR_GETTING_CARDS,
   SUCCESS_GETTING_CARDS,
   SET_CHOSEN_CARD,
-} from "../actionsType";
+} from "../actionsType/cards";
 
 import Repository from "../../repository";
 
@@ -26,7 +26,7 @@ export function setChosenCard(value) {
 export const getCardsFromAPI = () => async (dispatch) => {
   dispatch(cardsLoader(true));
 
-  const { value, error } = await Repository.APICore.getPersons();
+  const { value, error } = await Repository.APICards.getPersons();
   if (error || !value) {
     dispatch(cardsError(error));
   } else dispatch(cardsSuccess(value));
@@ -37,7 +37,7 @@ export const getCardsFromAPI = () => async (dispatch) => {
 export const getCardByIdFromAPI = (id) => async (dispatch) => {
   dispatch(cardsLoader(true));
 
-  const { value, error } = await Repository.APICore.getPersonById(id);
+  const { value, error } = await Repository.APICards.getPersonById(id);
   if (error || !value) {
     dispatch(cardsError(error));
   } else dispatch(setChosenCard(value[0]));
