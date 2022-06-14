@@ -1,16 +1,52 @@
 @import "../../../assets/styles/main.scss";
+.catalog {
+  max-width: 77rem;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  .title {
+    font-size: 2rem;
+    color: $darkGrey;
+    flex: 0 1 90%;
+  }
+  .tabs {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 0 1 10%;
+    .list,
+    .cards {
+      cursor: pointer;
+      margin: 0 0 0 1rem;
+    }
+    svg {
+      stroke: $black;
+    }
+    .active {
+      margin: 0 0 0 1rem;
+      cursor: pointer;
+      & svg {
+        stroke: $yellow;
+      }
+    }
+  }
+}
 .cardList {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	gap: 1.5rem;
-	max-width: 77rem;
-	padding: 0 1rem;
-	margin: 0 auto;
-	@include custom(1001) {
-		grid-template-columns: 1fr 1fr;
-	}
-	@include custom(660) {
-		grid-template-columns: 1fr;
-		gap: 1rem;
-	}
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+  max-width: 77rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+  @include custom(1001) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include custom(660) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.cardListList {
+  @include container;
 }

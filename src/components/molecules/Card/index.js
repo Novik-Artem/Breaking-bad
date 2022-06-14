@@ -5,7 +5,7 @@ const Card = ({ img, birthday, status, name, id }) => {
     <Link to={`/card/${id}`}>
       <div className={style.card}>
         <div className={style.content}>
-          <img src={img} className={style.image} alt="img" />
+          <img src={img} className={style.image} alt="" />
           <div className={style.info}>
             <div className={style.text}>{status}</div>
             <div className={style.name}>{name}</div>

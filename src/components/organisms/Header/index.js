@@ -12,7 +12,7 @@ const Header = () => {
       <div className={style.content}>
         <Link to="/">
           <div className={style.logo}>
-            <img src={logo} alt="logo_error" />
+            <img src={logo} alt="" />
           </div>
         </Link>
         <Link
@@ -21,7 +21,7 @@ const Header = () => {
             params.pathname === "/cards" ? style.activeLink : style.link
           }
         >
-          <img src={burger} alt="burger_error" className={style.burger} />
+          <img src={burger} alt="" className={style.burger} />
           Каталог
         </Link>
       </div>

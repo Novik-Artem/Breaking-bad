@@ -1,8 +1,42 @@
+@import "../../../assets/styles/main.scss";
 .content {
-  text-align: center;
-  margin: 0 0 1rem 0;
-  .link {
-    color: green;
-    font-size: 3rem;
+  @include container;
+  margin: 0 auto 1rem auto;
+  .search {
+    max-width: 49rem;
+    margin: 5rem auto;
+    padding: 1rem;
+    box-shadow: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.25rem;
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    .input {
+      color: $darkGrey;
+      opacity: 0.5;
+      flex:0 1 90%;
+    }
+    & span {
+      color: $darkGrey;
+    }
+    .text {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      @include custom(540) {
+        font-size: 0.85rem;
+      }
+    }
+    @include custom(800) {
+      max-width: 30rem;
+      margin: 2.5rem auto;
+    }
+    @include custom(540) {
+      max-width: 20rem;
+      margin: 1rem auto;
+    }
+    @include custom(540) {
+      max-width: 17rem;
+    }
   }
 }

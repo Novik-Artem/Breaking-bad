@@ -1,6 +1,7 @@
 @mixin container {
-  max-width: 78rem;
+  max-width: 77rem;
   margin: 0 auto;
+	padding: 0 1rem;
 }
 
 @mixin laptop {
