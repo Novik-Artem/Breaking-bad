@@ -5,7 +5,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 const MainPage = () => {
   return (
     <main className={style.main}>
-      <LazyLoadImage src={image} alt="img_error" className={style.image} />
+      <LazyLoadImage src={image} alt="" className={style.image} />
     </main>
   );
 };

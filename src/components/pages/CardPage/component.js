@@ -6,7 +6,7 @@ const CardPage = ({ card, personQuote }) => {
   return (
     <div className={style.container}>
       <Link to="/cards" className={style.link}>
-        <img src={icon} alt="icon_error" className={style.icon} />
+        <img src={icon} alt="" className={style.icon} />
         назад в каталог
       </Link>
       <div className={style.content}>
