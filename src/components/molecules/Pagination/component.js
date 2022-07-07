@@ -7,7 +7,6 @@ const Pagination = ({
   plusOffset,
   minusOffset,
   changeCurrentPage,
-  pagesCount,
 }) => {
   return (
     <div className={style.pagination}>

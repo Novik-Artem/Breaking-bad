@@ -6,7 +6,8 @@ import {
   INCREASE_OFFSET,
 	REDUCE_OFFSET,
 	SET_CURRENT_PAGE,
-	TOTAL_CARDS_COUNT
+	TOTAL_CARDS_COUNT,
+	CHANGE_CARDS_COUNT
 } from "../actionsType/cards";
 
 import Repository from "../../repository";
@@ -41,6 +42,10 @@ export function setCurrentPage(currentPage) {
 
 export function cardsCount(value) {
   return { type: TOTAL_CARDS_COUNT, value};
+}
+
+export function changeCardsCount(limit) {
+  return { type: CHANGE_CARDS_COUNT, limit};
 }
 
 export const getCardsFromAPI = (limit, offset, currentPage) => async (dispatch) => {

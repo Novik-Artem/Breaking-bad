@@ -1,4 +1,3 @@
-import cards from "../../repository/cards";
 import {
   LOADING_GETTING_CARDS,
   ERROR_GETTING_CARDS,
@@ -7,7 +6,8 @@ import {
   INCREASE_OFFSET,
   REDUCE_OFFSET,
 	SET_CURRENT_PAGE,
-	TOTAL_CARDS_COUNT
+	TOTAL_CARDS_COUNT,
+	CHANGE_CARDS_COUNT
 } from "../actionsType/cards";
 
 const initialState = {
@@ -65,6 +65,11 @@ const card = (state = initialState, action) => {
 				return {
 					...state,
 					totalCardsCount: action.value,
+			};
+			case CHANGE_CARDS_COUNT:
+				return {
+					...state,
+					limit: action.limit,
 				};
     default:
       return state;

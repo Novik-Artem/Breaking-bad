@@ -14,7 +14,7 @@
     .input {
       color: $darkGrey;
       opacity: 0.5;
-      flex:0 1 90%;
+      flex: 0 1 90%;
     }
     & span {
       color: $darkGrey;
@@ -37,6 +37,14 @@
     }
     @include custom(540) {
       max-width: 17rem;
+    }
+  }
+  .choiceBlock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include custom(1150) {
+      display: block;
     }
   }
 }
