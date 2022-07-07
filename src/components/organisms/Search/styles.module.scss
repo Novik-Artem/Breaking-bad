@@ -1,0 +1,43 @@
+@import "../../../assets/styles/main.scss";
+.search {
+  max-width: 49rem;
+  margin: 5rem auto;
+  padding: 1rem;
+  box-shadow: 0px 0.25rem 0.5rem $darkBg;
+  border-radius: 0.25rem;
+  background-color: $white;
+  display: flex;
+  align-items: center;
+  .input {
+    color: $darkGrey;
+    opacity: 0.5;
+    flex: 0 1 90%;
+  }
+  & span {
+    color: $darkGrey;
+  }
+  .text {
+		padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    @include custom(540) {
+      font-size: 0.85rem;
+    }
+  }
+  @include custom(800) {
+    max-width: 30rem;
+    margin: 2.5rem auto;
+  }
+  @include custom(540) {
+    max-width: 20rem;
+    margin: 1rem auto;
+  }
+  @include custom(540) {
+    max-width: 17rem;
+  }
+}

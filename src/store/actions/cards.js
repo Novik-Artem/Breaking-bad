@@ -4,10 +4,12 @@ import {
   SUCCESS_GETTING_CARDS,
   SET_CHOSEN_CARD,
   INCREASE_OFFSET,
-	REDUCE_OFFSET,
-	SET_CURRENT_PAGE,
-	TOTAL_CARDS_COUNT,
-	CHANGE_CARDS_COUNT
+  REDUCE_OFFSET,
+  SET_CURRENT_PAGE,
+  TOTAL_CARDS_COUNT,
+  CHANGE_CARDS_COUNT,
+  SEARCH_PERSON_BY_NAME,
+  RESET_FOUNDED_PERSONS,
 } from "../actionsType/cards";
 
 import Repository from "../../repository";
@@ -37,26 +39,39 @@ export function reduceOffset() {
 }
 
 export function setCurrentPage(currentPage) {
-  return { type: SET_CURRENT_PAGE, currentPage};
+  return { type: SET_CURRENT_PAGE, currentPage };
 }
 
 export function cardsCount(value) {
-  return { type: TOTAL_CARDS_COUNT, value};
+  return { type: TOTAL_CARDS_COUNT, value };
 }
 
 export function changeCardsCount(limit) {
-  return { type: CHANGE_CARDS_COUNT, limit};
+  return { type: CHANGE_CARDS_COUNT, limit };
 }
 
-export const getCardsFromAPI = (limit, offset, currentPage) => async (dispatch) => {
-  dispatch(cardsLoader(true));
-  const { value, error } = await Repository.APICards.getPersons(limit, offset, currentPage);
-  if (error || !value) {
-    dispatch(cardsError(error));
-  } else dispatch(cardsSuccess(value));
+export function searchPersonByName(value) {
+  return { type: SEARCH_PERSON_BY_NAME, value };
+}
 
-  dispatch(cardsLoader(false));
-};
+export function resetFoundedPersons() {
+  return { type: RESET_FOUNDED_PERSONS };
+}
+
+export const getCardsFromAPI =
+  (limit, offset, currentPage) => async (dispatch) => {
+    dispatch(cardsLoader(true));
+    const { value, error } = await Repository.APICards.getPersons(
+      limit,
+      offset,
+      currentPage
+    );
+    if (error || !value) {
+      dispatch(cardsError(error));
+    } else dispatch(cardsSuccess(value));
+
+    dispatch(cardsLoader(false));
+  };
 
 export const getCardByIdFromAPI = (id) => async (dispatch) => {
   dispatch(cardsLoader(true));
@@ -70,8 +85,15 @@ export const getCardByIdFromAPI = (id) => async (dispatch) => {
 };
 
 export const getTotalCardsCount = () => async (dispatch) => {
-	const { value, error } = await Repository.APICards.getTotalCardsCount();
+  const { value, error } = await Repository.APICards.getTotalCardsCount();
   if (error || !value) {
     dispatch(cardsError(error));
-	} else dispatch(cardsCount(value));
+  } else dispatch(cardsCount(value));
+};
+
+export const getPersonName = (name) => async (dispatch) => {
+  const { value, error } = await Repository.APICards.getPersonName(name);
+  if (error || !value) {
+    dispatch(cardsError(error));
+  } else dispatch(searchPersonByName(value));
 };

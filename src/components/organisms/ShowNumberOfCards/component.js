@@ -9,7 +9,8 @@ const NumberOfCards = ({ numbers, limit, changeCardsNumber }) => {
           return (
             <span
               className={limit === number ? style.currentNumber : style.number}
-              onClick={() => changeCardsNumber(number)}
+							onClick={() => changeCardsNumber(number)}
+							key={number}
             >
               {number}
             </span>

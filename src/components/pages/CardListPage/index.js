@@ -2,23 +2,48 @@ import style from "./styles.module.scss";
 import CardList from "../../organisms/CardList";
 import Pagination from "../../molecules/Pagination";
 import ShowNumberOfCards from "../../organisms/ShowNumberOfCards";
-import search from "../../../assets/icons/search.svg";
+import Search from "../../organisms/Search";
+import { useSelector, useDispatch } from "react-redux";
+import Card from "../../molecules/Card";
+import { resetFoundedPersons } from "../../../store/actions/cards";
 
 const CardListPage = () => {
+  const dispatch = useDispatch();
+  const foundedPersons = useSelector((state) => state.cards.foundedPersons);
+  const reset = () => {
+    dispatch(resetFoundedPersons());
+  };
   return (
     <div className={style.content}>
-      <div className={style.search}>
-        <input type="text" placeholder="поиск" className={style.input} />
-        <div className={style.text}>
-          <img src={search} alt="" className={style.searchIcon} />
-          Найти
+      <Search />
+      {foundedPersons ? (
+        <div>
+          <div className={style.back} onClick={reset}>
+            {" "}
+            ⟵ Вернуться в каталог
+          </div>
+          <div className={style.foundedContent}>
+            {foundedPersons.map((item) => (
+              <Card
+                img={item.img}
+                birthday={item.birthday}
+                status={item.status}
+                name={item.name}
+                key={item.char_id}
+                id={item.char_id}
+              />
+            ))}
+          </div>
         </div>
-      </div>
-      <CardList />
-      <div className={style.choiceBlock}>
-        <Pagination />
-        <ShowNumberOfCards />
-      </div>
+      ) : (
+        <>
+          <CardList />
+          <div className={style.choiceBlock}>
+            <Pagination />
+            <ShowNumberOfCards />
+          </div>
+        </>
+      )}
     </div>
   );
 };

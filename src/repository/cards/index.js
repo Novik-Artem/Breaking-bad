@@ -11,8 +11,8 @@ class Cards {
         {
           params: {
             limit,
-						offset,
-						currentPage
+            offset,
+            currentPage,
           },
         }
       );
@@ -37,18 +37,34 @@ class Cards {
       result.error = e.message;
     }
     return result;
-	};
-	
-	getTotalCardsCount = async () => {
+  };
+
+  getTotalCardsCount = async () => {
     const result = {
       value: null,
       error: null,
     };
     try {
       const response = await axios.get(
-        "https://breakingbadapi.com/api/characters",
-			);
-			result.value = response.data.length;
+        "https://breakingbadapi.com/api/characters"
+      );
+      result.value = response.data.length;
+    } catch (e) {
+      result.error = e.message;
+    }
+    return result;
+  };
+
+  getPersonName = async (name) => {
+    const result = {
+      value: null,
+      error: null,
+    };
+    try {
+      const response = await axios.get(
+        `https://breakingbadapi.com/api/characters?name=${name}`
+      );
+      result.value = response.data;
     } catch (e) {
       result.error = e.message;
     }

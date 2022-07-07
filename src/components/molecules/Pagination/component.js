@@ -15,7 +15,8 @@ const Pagination = ({
           return (
             <span
               className={currentPage === p ? style.currentNumber : style.number}
-              onClick={() => changeCurrentPage(p)}
+							onClick={() => changeCurrentPage(p)}
+							key={p}
             >
               {p}
             </span>
