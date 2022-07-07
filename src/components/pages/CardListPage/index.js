@@ -23,16 +23,20 @@ const CardListPage = () => {
             ⟵ Вернуться в каталог
           </div>
           <div className={style.foundedContent}>
-            {foundedPersons.map((item) => (
-              <Card
-                img={item.img}
-                birthday={item.birthday}
-                status={item.status}
-                name={item.name}
-                key={item.char_id}
-                id={item.char_id}
-              />
-            ))}
+            {foundedPersons.length === 0 ? (
+              <div className={style.error}>Persons not found</div>
+            ) : (
+              foundedPersons.map((item) => (
+                <Card
+                  img={item.img}
+                  birthday={item.birthday}
+                  status={item.status}
+                  name={item.name}
+                  key={item.char_id}
+                  id={item.char_id}
+                />
+              ))
+            )}
           </div>
         </div>
       ) : (

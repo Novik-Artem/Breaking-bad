@@ -2,12 +2,13 @@ import style from "./styles.module.scss";
 import searchIcon from "../../../assets/icons/search.svg";
 import { useState } from "react";
 
+
 const Search = ({ search }) => {
   let [value, setValue] = useState("");
-  const submit = () => {
+	const submit = () => {
+		
     search(value);
     setValue("");
-    console.log(value);
   };
 
   return (
