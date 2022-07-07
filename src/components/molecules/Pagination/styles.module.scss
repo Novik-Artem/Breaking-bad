@@ -1,9 +1,11 @@
 @import "../../../assets/styles/main.scss";
 .pagination {
-  @include container;
+	padding: 0 1rem;
   display: flex;
   align-items: center;
-  margin: 2rem 0;
+	@include custom(1150) {
+		margin: 0 0 1rem 0;
+	}
 	@include custom(462) {
     display: block;
   }

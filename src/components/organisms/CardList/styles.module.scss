@@ -37,7 +37,7 @@
   gap: 1.5rem;
   max-width: 77rem;
   padding: 0 1rem;
-  margin: 0 auto;
+  margin: 0 auto 2rem auto;
   @include custom(1001) {
     grid-template-columns: 1fr 1fr;
   }
@@ -49,4 +49,5 @@
 
 .cardListList {
   @include container;
+	margin: 0 auto 2rem auto;
 }

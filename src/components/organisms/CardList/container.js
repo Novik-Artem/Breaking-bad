@@ -13,8 +13,8 @@ const CardListContainer = () => {
   const currentPage = useSelector((state) => state.cards.currentPage);
 
   useEffect(() => {
-		dispatch(getCardsFromAPI(limit, offset, currentPage));
-  }, [offset, currentPage,]);
+    dispatch(getCardsFromAPI(limit, offset, currentPage));
+  }, [offset, currentPage, limit]);
 
   const cards = useSelector((state) => state.cards.cards);
   const isError = useSelector((state) => state.cards.isError);

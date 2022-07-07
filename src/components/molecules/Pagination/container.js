@@ -45,7 +45,6 @@ const PaginationContainer = () => {
       plusOffset={plusOffset}
       minusOffset={minusOffset}
       changeCurrentPage={changeCurrentPage}
-      pagesCount={pagesCount}
     />
   );
 };

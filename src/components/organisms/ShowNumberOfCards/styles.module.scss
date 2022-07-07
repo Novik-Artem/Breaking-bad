@@ -1,0 +1,34 @@
+@import "../../../assets/styles/main.scss";
+.cardsNumber {
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  @include custom(1150) {
+    margin: 0 0 2rem 0;
+  }
+  @include custom(430) {
+    display: block;
+  }
+  .showCards {
+    @include custom(430) {
+      margin: 0 0 2rem 0;
+    }
+  }
+  .number,
+  .currentNumber {
+    cursor: pointer;
+    margin: 0 0 0.5rem 0.5rem;
+    background: $white;
+    box-shadow: 0 0.25rem 0.5rem $darkBg;
+    border-radius: 0.25rem;
+    color: $black;
+    padding: 0.8rem;
+    opacity: 1;
+    @include custom(430) {
+      margin: 0 0.5rem 0 0;
+    }
+  }
+  .currentNumber {
+    color: $yellow;
+  }
+}
