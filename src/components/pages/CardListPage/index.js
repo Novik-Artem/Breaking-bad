@@ -1,5 +1,6 @@
 import style from "./styles.module.scss";
 import CardList from "../../organisms/CardList";
+import Pagination from "../../molecules/Pagination";
 import search from "../../../assets/icons/search.svg";
 
 const CardListPage = () => {
@@ -12,7 +13,8 @@ const CardListPage = () => {
           Найти
         </div>
       </div>
-      <CardList />
+			<CardList />
+			<Pagination/>
     </div>
   );
 };

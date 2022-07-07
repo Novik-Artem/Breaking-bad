@@ -3,6 +3,10 @@ import {
   ERROR_GETTING_CARDS,
   SUCCESS_GETTING_CARDS,
   SET_CHOSEN_CARD,
+  INCREASE_OFFSET,
+	REDUCE_OFFSET,
+	SET_CURRENT_PAGE,
+	TOTAL_CARDS_COUNT
 } from "../actionsType/cards";
 
 import Repository from "../../repository";
@@ -23,10 +27,25 @@ export function setChosenCard(value) {
   return { type: SET_CHOSEN_CARD, value };
 }
 
-export const getCardsFromAPI = () => async (dispatch) => {
-  dispatch(cardsLoader(true));
+export function increaseOffset() {
+  return { type: INCREASE_OFFSET };
+}
 
-  const { value, error } = await Repository.APICards.getPersons();
+export function reduceOffset() {
+  return { type: REDUCE_OFFSET };
+}
+
+export function setCurrentPage(currentPage) {
+  return { type: SET_CURRENT_PAGE, currentPage};
+}
+
+export function cardsCount(value) {
+  return { type: TOTAL_CARDS_COUNT, value};
+}
+
+export const getCardsFromAPI = (limit, offset, currentPage) => async (dispatch) => {
+  dispatch(cardsLoader(true));
+  const { value, error } = await Repository.APICards.getPersons(limit, offset, currentPage);
   if (error || !value) {
     dispatch(cardsError(error));
   } else dispatch(cardsSuccess(value));
@@ -43,4 +62,11 @@ export const getCardByIdFromAPI = (id) => async (dispatch) => {
   } else dispatch(setChosenCard(value[0]));
 
   dispatch(cardsLoader(false));
+};
+
+export const getTotalCardsCount = () => async (dispatch) => {
+	const { value, error } = await Repository.APICards.getTotalCardsCount();
+  if (error || !value) {
+    dispatch(cardsError(error));
+	} else dispatch(cardsCount(value));
 };

@@ -1,0 +1,49 @@
+@import "../../../assets/styles/main.scss";
+.pagination {
+  @include container;
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+	@include custom(462) {
+    display: block;
+  }
+  .numbers {
+		display: flex;
+		flex-wrap: wrap;
+    .number,
+    .currentNumber {
+			cursor: pointer;
+			margin: 0 0.5rem 0.5rem 0;
+      background: $white;
+      box-shadow: 0 0.25rem 0.5rem $darkBg;
+      border-radius: 0.25rem;
+      color: $black;
+      padding: 0.8rem;
+      opacity: 1;
+    }
+    .currentNumber {
+      color: $yellow;
+    }
+  }
+  .button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    .leftArrow,
+    .rightArrow {
+      margin: 0 1rem;
+			@include custom(462) {
+				margin: 1rem 0 0 0;
+			}
+    }
+    .rightArrow {
+      transform: rotate(180deg);
+			@include custom(462) {
+				margin: 1rem 0 0 1rem;
+			}
+    }
+  }
+}
