@@ -10,10 +10,10 @@ const CardListContainer = () => {
   const dispatch = useDispatch();
   const limit = useSelector((state) => state.cards.limit);
   const offset = useSelector((state) => state.cards.offset);
-  const currentPage = useSelector((state) => state.cards.currentPage);
+	const currentPage = useSelector((state) => state.cards.currentPage);
 
   useEffect(() => {
-    dispatch(getCardsFromAPI(limit, offset, currentPage));
+		dispatch(getCardsFromAPI(limit, offset, currentPage));
   }, [offset, currentPage, limit]);
 
   const cards = useSelector((state) => state.cards.cards);

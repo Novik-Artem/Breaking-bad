@@ -5,9 +5,11 @@ import {
   SET_CHOSEN_CARD,
   INCREASE_OFFSET,
   REDUCE_OFFSET,
-	SET_CURRENT_PAGE,
-	TOTAL_CARDS_COUNT,
-	CHANGE_CARDS_COUNT
+  SET_CURRENT_PAGE,
+  TOTAL_CARDS_COUNT,
+  CHANGE_CARDS_COUNT,
+  SEARCH_PERSON_BY_NAME,
+	RESET_FOUNDED_PERSONS,
 } from "../actionsType/cards";
 
 const initialState = {
@@ -15,10 +17,11 @@ const initialState = {
   isError: false,
   isLoader: null,
   chosenCard: {},
-	totalCardsCount: 0,
+  totalCardsCount: 0,
   currentPage: 1,
   limit: 10,
   offset: 0,
+  foundedPersons: null,
 };
 
 const card = (state = initialState, action) => {
@@ -60,17 +63,27 @@ const card = (state = initialState, action) => {
         ...state,
         currentPage: action.currentPage,
         offset: (action.currentPage - 1) * state.limit,
-			};
-			case TOTAL_CARDS_COUNT:
-				return {
-					...state,
-					totalCardsCount: action.value,
-			};
-			case CHANGE_CARDS_COUNT:
-				return {
-					...state,
-					limit: action.limit,
-				};
+      };
+    case TOTAL_CARDS_COUNT:
+      return {
+        ...state,
+        totalCardsCount: action.value,
+      };
+    case CHANGE_CARDS_COUNT:
+      return {
+        ...state,
+        limit: action.limit,
+      };
+    case SEARCH_PERSON_BY_NAME:
+      return {
+        ...state,
+        foundedPersons: action.value,
+      };
+    case RESET_FOUNDED_PERSONS:
+      return {
+        ...state,
+        foundedPersons: null,
+      };
     default:
       return state;
   }
